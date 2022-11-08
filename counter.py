@@ -18,13 +18,29 @@ class Counter:
     def __str__(self):
         return f"The cirrent state of the counter is {self._value}"
 
+    @property
+    def state(self):
+        return self._value
+
+    @state.setter
+    def state(self, value):
+        self._value = value
+    @state.deleter
+    def state(self):
+        del self._value
+
+    # state = property()
+    # state = state.getter(state)
+    # state = state.setter(set_state)
+    # state = state.deleter(del_state)
+
 
 counter1 = Counter()
-counter1.increment()
-counter1.increment()
-print(counter1)
+counter1.state = 10
 
-counter2 = Counter(5)
-counter2.decrement()
-counter2.decrement()
-print(counter2)
+print(counter1.state)
+
+counter1.increment()
+
+
+print(counter1.state)
