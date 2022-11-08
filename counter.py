@@ -36,11 +36,9 @@ class Counter:
 
 
 counter1 = Counter()
+
 counter1.state = 10
-
 print(counter1.state)
-
 counter1.increment()
-
 
 print(counter1.state)
